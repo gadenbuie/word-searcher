@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Word Search Maker — printable puzzles</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <div class="brand">
+        <svg class="brand-icon" viewBox="0 0 32 32" aria-hidden="true">
+          <rect x="1.5" y="1.5" width="29" height="29" fill="none" stroke="currentColor" stroke-width="3"/>
+          <path d="M11 2v28M21 2v28M2 11h28M2 21h28" fill="none" stroke="currentColor" stroke-width="2"/>
+          <rect x="21" y="21" width="10" height="10" fill="var(--pop)"/>
+        </svg>
+        <h1>Word Search <em>Maker</em></h1>
+      </div>
+    </div>
+  </header>
+
+  <main class="app">
+    <!-- ============ Controls ============ -->
+    <section class="panel controls" id="controls" aria-labelledby="controls-title">
+      <h2 id="controls-title" class="panel-title">Build your puzzle</h2>
+
+      <label class="field">
+        <span>Puzzle title</span>
+        <input type="text" id="title" value="🦃 Happy Thanksgiving! 🥧" maxlength="60">
+      </label>
+
+      <fieldset class="field presets">
+        <legend>Word list preset</legend>
+        <div class="preset-chips" id="preset-chips" role="group" aria-label="Word list preset"></div>
+      </fieldset>
+
+      <label class="field">
+        <span>Words — one word or phrase per line</span>
+        <textarea id="words" rows="10" spellcheck="false" placeholder="TURKEY&#10;STUFFING&#10;PILGRIM"></textarea>
+      </label>
+
+      <p class="error" id="error" role="alert" hidden></p>
+
+      <fieldset class="field">
+        <legend>Difficulty</legend>
+        <label class="check"><input type="checkbox" id="vertical" checked> Allow vertical words</label>
+        <label class="check"><input type="checkbox" id="diagonals" checked> Allow diagonal words</label>
+        <label class="check"><input type="checkbox" id="backwards" checked> Allow backwards words</label>
+        <label class="check"><input type="checkbox" id="overlaps" checked> Allow words to share letters</label>
+        <label class="field-inline">
+          <span>Filler letters</span>
+          <select id="fill-style">
+            <option value="random">Random A–Z</option>
+            <option value="wordly">Letters from the word list (harder)</option>
+          </select>
+        </label>
+        <label class="field-inline">
+          <span>Grid size</span>
+          <select id="grid-size">
+            <option value="auto" selected>Auto</option>
+            <option value="8">8 × 8</option>
+            <option value="10">10 × 10</option>
+            <option value="12">12 × 12</option>
+            <option value="15">15 × 15</option>
+            <option value="18">18 × 18</option>
+            <option value="20">20 × 20</option>
+            <option value="24">24 × 24</option>
+          </select>
+        </label>
+      </fieldset>
+
+      <div class="actions">
+        <button id="generate" class="primary">Generate puzzle</button>
+        <button id="print">Print</button>
+      </div>
+      <p class="hint">Tip: print from your browser's dialog — the layout is already fitted to US Letter with the word list below the grid. <kbd>⌘</kbd>/<kbd>Ctrl</kbd> + <kbd>Enter</kbd> generates from anywhere.</p>
+    </section>
+
+    <!-- ============ Puzzle output ============ -->
+    <div class="output">
+      <section class="panel puzzle hidden" id="puzzle" aria-labelledby="puzzle-title">
+        <h2 id="puzzle-title" class="puzzle-title">Word Search</h2>
+        <div class="grid" id="grid" role="table" aria-label="Word search grid"></div>
+
+        <div class="wordbox" id="wordbox">
+          <p class="find-label">Find these <span id="word-count">0</span> words</p>
+          <ul class="word-list" id="word-list"></ul>
+        </div>
+
+        <div class="actions no-print">
+          <button id="reveal">Show answer key</button>
+          <button id="regenerate">Shuffle new puzzle</button>
+        </div>
+      </section>
+
+      <!-- ============ Answer key (prints on its own page when revealed) ============ -->
+      <section class="panel answers hidden" id="answers" aria-labelledby="answers-title">
+        <h2 id="answers-title" class="puzzle-title">Answer Key</h2>
+        <p class="answer-note">Highlighted cells show where each word is hidden.</p>
+        <div class="grid" id="answer-grid" role="table" aria-label="Answer key grid"></div>
+      </section>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

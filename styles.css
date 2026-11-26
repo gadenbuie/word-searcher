@@ -1,0 +1,453 @@
+/* ============ Self-hosted display face ============ */
+@font-face {
+  font-family: "Archivo Black";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/archivo-black-400-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Archivo Black";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/archivo-black-400-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* ============ Theme palettes ============
+   One rule per theme serves both the page (:root[data-theme]) and the
+   preset chips ([data-chip-theme]), so the color never drifts between them. */
+:root,
+:root[data-theme="thanksgiving"],
+[data-chip-theme="thanksgiving"] { --pop: #FF6B2C; --tint: #FFC145; --paper: #FFF6E6; }
+:root[data-theme="fall"],
+[data-chip-theme="fall"] { --pop: #D95F12; --tint: #F2B441; --paper: #FFF3E2; }
+:root[data-theme="soccer-worldcup"],
+[data-chip-theme="soccer-worldcup"] { --pop: #10A84B; --tint: #FFD400; --paper: #F0FFF3; }
+:root[data-theme="soccer-europe"],
+[data-chip-theme="soccer-europe"] { --pop: #3B6EF5; --tint: #FFD400; --paper: #F1F4FF; }
+:root[data-theme="soccer-mls"],
+[data-chip-theme="soccer-mls"] { --pop: #EC2B3A; --tint: #11A85A; --paper: #FFF3F3; }
+:root[data-theme="christmas"],
+[data-chip-theme="christmas"] { --pop: #E12B3F; --tint: #128A45; --paper: #FFF5F5; }
+:root[data-theme="st-patricks"],
+[data-chip-theme="st-patricks"] { --pop: #0E8A3E; --tint: #F6C445; --paper: #F1FFF3; }
+:root[data-theme="easter"],
+[data-chip-theme="easter"] { --pop: #E86FB0; --tint: #7BD8E8; --paper: #FFF4FA; }
+:root[data-theme="halloween"],
+[data-chip-theme="halloween"] { --pop: #A855F7; --tint: #FF8A00; --paper: #FAF4FF; }
+:root[data-theme="fourth-of-july"],
+[data-chip-theme="fourth-of-july"] { --pop: #F0343F; --tint: #3B6EF5; --paper: #FFF5F5; }
+:root[data-theme="bastille-day"],
+[data-chip-theme="bastille-day"] { --pop: #4A6CF0; --tint: #FFD400; --paper: #F4F7FF; }
+:root[data-theme="oktoberfest"],
+[data-chip-theme="oktoberfest"] { --pop: #C97A12; --tint: #1B6E3C; --paper: #FFF7E8; }
+:root[data-theme="custom"],
+[data-chip-theme="custom"] { --pop: #7B6CF0; --tint: #22C7D6; --paper: #F4F3FF; }
+
+:root {
+  --ink: #111111;
+  --panel: #FFFDF7;
+  --muted: #4A4640;
+  --display: "Archivo Black", "Arial Black", sans-serif;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --border: 3px solid var(--ink);
+  --shadow: 6px 6px 0 var(--ink);
+  --shadow-sm: 4px 4px 0 var(--ink);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.5;
+  background: var(--paper);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ============ Masthead ============ */
+.masthead {
+  background: var(--ink);
+  color: #fff;
+  border-bottom: 8px solid var(--pop);
+}
+.masthead-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 1.6rem 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 0.75rem 1.5rem;
+}
+.brand { display: flex; align-items: center; gap: 0.85rem; }
+.brand-icon { width: 38px; height: 38px; color: #fff; flex: none; }
+.brand h1 {
+  font-family: var(--display);
+  font-size: clamp(1.5rem, 4.5vw, 2.5rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  margin: 0;
+}
+.brand h1 em { color: var(--pop); font-style: normal; }
+
+/* ============ Layout ============ */
+.app {
+  position: relative;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 2.75rem 1.25rem 4rem;
+  display: grid;
+  grid-template-columns: minmax(320px, 400px) minmax(0, 1fr);
+  gap: 2rem;
+  align-items: start;
+}
+.output { display: grid; align-content: start; gap: 2rem; min-width: 0; }
+.output > .panel { min-width: 0; }
+
+@media (max-width: 860px) {
+  .app { display: block; padding: 2.25rem 1.25rem 4rem; }
+  .controls, .output { margin-bottom: 2rem; }
+}
+@media (max-width: 640px) {
+  .wordbox { width: 100%; }
+  .word-list { columns: 2; column-gap: 1.25rem; }
+  .word-list li, .puzzle-title { overflow-wrap: anywhere; }
+}
+
+/* ============ Panels ============ */
+.panel {
+  position: relative;
+  background: var(--panel);
+  border: var(--border);
+  box-shadow: var(--shadow);
+  padding: 1.6rem;
+}
+.app::before {
+  content: "";
+  position: absolute;
+  top: 14px;
+  left: 44px;
+  width: 88px;
+  height: 26px;
+  background: var(--tint);
+  border: 2px solid var(--ink);
+  box-shadow: 2px 2px 0 var(--ink);
+  transform: rotate(-4deg);
+}
+.panel-title {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-family: var(--display);
+  font-size: 1.2rem;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  margin: 0 0 1.3rem;
+}
+.panel-title::before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  flex: none;
+  background: var(--pop);
+  border: 2px solid var(--ink);
+}
+
+/* ============ Form controls ============ */
+.field { display: block; margin-bottom: 1.15rem; }
+.field > span, legend, .check, .field-inline > span {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+.field > span, legend { display: block; margin-bottom: 0.45rem; }
+input[type="text"], textarea, select {
+  width: 100%;
+  font: inherit;
+  font-size: 0.95rem;
+  padding: 0.65rem 0.75rem;
+  border: var(--border);
+  border-radius: 0;
+  background: #fff;
+  color: var(--ink);
+  box-shadow: 3px 3px 0 var(--ink);
+}
+textarea { font-family: var(--mono); font-size: 0.9rem; resize: vertical; line-height: 1.5; }
+input:focus-visible, textarea:focus-visible, select:focus-visible, button:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 2px;
+}
+input, textarea { caret-color: var(--ink); }
+
+fieldset {
+  border: var(--border);
+  padding: 1.15rem 1rem 1rem;
+  margin: 0 0 1.15rem;
+  box-shadow: 3px 3px 0 var(--ink);
+}
+legend {
+  background: var(--ink);
+  color: #fff;
+  padding: 0.3rem 0.6rem;
+  margin: 0;
+}
+.check {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.3rem 0;
+  cursor: pointer;
+}
+.check input { width: 1.05rem; height: 1.05rem; margin: 0; accent-color: var(--pop); }
+.field-inline {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.7rem;
+}
+.field-inline > span { margin: 0; }
+
+/* Preset chips — each chip wears its own theme color */
+.preset-chips { display: flex; flex-wrap: wrap; gap: 0.65rem; }
+.preset-chip {
+  --chip-rot: -1deg;
+  background: var(--pop);
+  border: var(--border);
+  border-radius: 0;
+  box-shadow: var(--shadow-sm);
+  padding: 0.5rem 0.7rem;
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  transform: rotate(var(--chip-rot));
+}
+.preset-chip:nth-child(even) { --chip-rot: 1deg; }
+.preset-chip:hover { transform: translate(-2px, -3px) rotate(0deg); box-shadow: 6px 6px 0 var(--ink); }
+.preset-chip[aria-pressed="true"] {
+  outline: 3px solid var(--ink);
+  outline-offset: 3px;
+  transform: translate(2px, 2px) rotate(0deg);
+  box-shadow: 1px 1px 0 var(--ink);
+}
+
+/* ============ Buttons ============ */
+.actions { display: flex; gap: 0.9rem; flex-wrap: wrap; }
+button {
+  font: inherit;
+  font-weight: 800;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  padding: 0.75rem 1.1rem;
+  border: var(--border);
+  border-radius: 0;
+  background: #fff;
+  color: var(--ink);
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition: transform 130ms ease, box-shadow 130ms ease;
+}
+button:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--ink); }
+button:active { transform: translate(3px, 3px); box-shadow: 1px 1px 0 var(--ink); }
+button.primary { background: var(--pop); font-size: 0.95rem; padding: 0.85rem 1.3rem; }
+
+/* Inline error instead of an alert dialog */
+.error {
+  background: var(--ink);
+  color: #fff;
+  border: var(--border);
+  padding: 0.6rem 0.75rem;
+  margin: -0.35rem 0 1.15rem;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+}
+.error::before { content: "! "; font-weight: 800; }
+
+.hint {
+  color: var(--muted);
+  font-size: 0.82rem;
+  margin: 1.1rem 0 0;
+  padding-top: 0.85rem;
+  border-top: 2px dashed var(--ink);
+}
+kbd {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  background: var(--panel);
+  border: 2px solid var(--ink);
+  padding: 0 0.3rem;
+}
+
+/* ============ Grid ============ */
+.puzzle, .answers { text-align: center; padding: 1.5rem; }
+.puzzle-title {
+  display: inline-block;
+  max-width: 100%;
+  font-family: var(--display);
+  font-size: clamp(1.05rem, 3vw, 1.5rem);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  background: var(--pop);
+  border: var(--border);
+  box-shadow: var(--shadow-sm);
+  padding: 0.65rem 1rem;
+  margin: 0 0 1.4rem;
+}
+.answer-note { font-size: 0.85rem; color: var(--muted); margin: 0 0 1rem; }
+
+.grid {
+  --cols: 10;
+  --cell: min(560px / var(--cols), 42px, calc((100vw - 6rem) / var(--cols)));
+  display: grid;
+  grid-template-columns: repeat(var(--cols), var(--cell));
+  grid-auto-rows: var(--cell);
+  justify-content: center;
+  margin: 0 auto 1.4rem;
+  border: 4px solid var(--ink);
+  box-shadow: var(--shadow);
+  background: #fff;
+  touch-action: manipulation;
+}
+.cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--mono);
+  font-weight: 800;
+  font-size: calc(var(--cell) * 0.5);
+  box-shadow: inset 0 0 0 1px #CBC6BA;
+  user-select: none;
+}
+.answers .cell.marked { background: var(--pop); box-shadow: inset 0 0 0 2px var(--ink); }
+
+/* ============ Word list ============ */
+.wordbox { max-width: 640px; margin: 0 auto; text-align: left; }
+.find-label {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 0.65rem;
+}
+.find-label span {
+  background: var(--pop);
+  border: 2px solid var(--ink);
+  padding: 0.05rem 0.4rem;
+  margin: 0 0.15rem;
+}
+.word-list {
+  columns: var(--word-cols, 4);
+  column-gap: 1.5rem;
+  margin: 0;
+  padding: 0 0 0 1.15rem;
+  font-size: var(--word-font-screen, 1rem);
+  line-height: 1.45;
+  list-style: square;
+}
+.word-list li { break-inside: avoid; padding: 0.1rem 0; }
+
+/* On screen, cap the height so tall lists scroll instead of pushing the page. */
+@media screen {
+  .word-list { max-height: 9rem; overflow-y: auto; padding-right: 0.5rem; }
+}
+
+/* ============ Browser surfaces ============ */
+::selection { background: var(--pop); color: var(--ink); }
+* { scrollbar-color: var(--ink) var(--panel); scrollbar-width: thin; }
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb { background: var(--ink); border: 2px solid var(--panel); }
+::-webkit-scrollbar-track { background: var(--panel); }
+
+.hidden { display: none !important; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}
+
+/* ============ Print — US Letter portrait, clean black & white ============ */
+@page { size: letter portrait; margin: 0.5in; }
+
+@media print {
+  body { background: #fff; }
+
+  .masthead, .controls, .no-print, .app::before { display: none !important; }
+
+  .app, .output { display: block; max-width: none; padding: 0; }
+  .panel { border: none; box-shadow: none; padding: 0; }
+
+  .puzzle-title {
+    font-size: 18pt;
+    background: none;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    margin-bottom: 0.25in;
+  }
+
+  /* Grid fills the printable width (7.5in inside 0.5in margins). */
+  .grid {
+    --cell: calc(var(--print-grid, 7.5in) / var(--cols));
+    grid-template-columns: repeat(var(--cols), var(--cell));
+    grid-auto-rows: var(--cell);
+    border: 1.5pt solid #000;
+    box-shadow: none;
+    margin-bottom: 0.25in;
+  }
+  .cell {
+    box-shadow: none;
+    border: 0.4pt solid #000;
+    font-size: calc(var(--print-grid, 7.5in) / var(--cols) * 0.55);
+    font-weight: 500;
+  }
+
+  .answers .cell.marked {
+    background: #d9d9d9;
+    box-shadow: none;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .wordbox { max-width: 7.5in; }
+  .find-label {
+    font-size: 10pt;
+    color: #000;
+    margin-bottom: 0.1in;
+    max-height: none;
+    overflow: visible;
+  }
+  .find-label span { background: none; border: 1pt solid #000; padding: 0 0.2in; }
+
+  /* Font size and column count are set from the word count in app.js so that
+     even the largest lists stay on the same page as the grid. */
+  .word-list {
+    columns: var(--word-cols, 4);
+    font-size: var(--word-font-print, 9pt);
+    line-height: 1.2;
+    padding-left: 1rem;
+    max-height: none;
+    overflow: visible;
+    margin-top: 0;
+  }
+
+  /* Answer key gets its own page — only when it has been revealed. */
+  .answers { page-break-before: always; }
+  .answers .puzzle-title { font-size: 14pt; margin-bottom: 0.15in; }
+  .answer-note { font-size: 9pt; color: #000; margin: 0 0 0.2in; }
+}
