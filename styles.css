@@ -22,28 +22,36 @@
 :root,
 :root[data-theme="thanksgiving"],
 [data-chip-theme="thanksgiving"] { --pop: #FF6B2C; --tint: #FFC145; --paper: #FFF6E6; }
-:root[data-theme="fall"],
-[data-chip-theme="fall"] { --pop: #D95F12; --tint: #F2B441; --paper: #FFF3E2; }
-:root[data-theme="soccer-worldcup"],
-[data-chip-theme="soccer-worldcup"] { --pop: #10A84B; --tint: #FFD400; --paper: #F0FFF3; }
+:root[data-theme="fall"], [data-chip-theme="fall"],
+:root[data-theme="cinco-de-mayo"], [data-chip-theme="cinco-de-mayo"] { --pop: #D95F12; --tint: #F2B441; --paper: #FFF3E2; }
+:root[data-theme="soccer-worldcup"], [data-chip-theme="soccer-worldcup"],
+:root[data-theme="dia-da-independencia"], [data-chip-theme="dia-da-independencia"],
+:root[data-theme="dia-de-portugal"], [data-chip-theme="dia-de-portugal"],
+:root[data-theme="sao-joao"], [data-chip-theme="sao-joao"] { --pop: #10A84B; --tint: #FFD400; --paper: #F0FFF3; }
 :root[data-theme="soccer-europe"],
 [data-chip-theme="soccer-europe"] { --pop: #4676F5; --tint: #FFD400; --paper: #F1F4FF; }
 :root[data-theme="soccer-mls"],
 [data-chip-theme="soccer-mls"] { --pop: #EC3543; --tint: #11A85A; --paper: #FFF3F3; }
-:root[data-theme="christmas"],
-[data-chip-theme="christmas"] { --pop: #E44052; --tint: #128A45; --paper: #FFF5F5; }
+:root[data-theme="christmas"], [data-chip-theme="christmas"],
+:root[data-theme="valentines"], [data-chip-theme="valentines"],
+:root[data-theme="three-kings"], [data-chip-theme="three-kings"] { --pop: #E44052; --tint: #128A45; --paper: #FFF5F5; }
 :root[data-theme="st-patricks"],
 [data-chip-theme="st-patricks"] { --pop: #1C9149; --tint: #F6C445; --paper: #F1FFF3; }
-:root[data-theme="easter"],
-[data-chip-theme="easter"] { --pop: #E86FB0; --tint: #7BD8E8; --paper: #FFF4FA; }
-:root[data-theme="halloween"],
-[data-chip-theme="halloween"] { --pop: #A855F7; --tint: #FF8A00; --paper: #FAF4FF; }
-:root[data-theme="fourth-of-july"],
-[data-chip-theme="fourth-of-july"] { --pop: #F0343F; --tint: #3B6EF5; --paper: #FFF5F5; }
-:root[data-theme="bastille-day"],
-[data-chip-theme="bastille-day"] { --pop: #5676F1; --tint: #FFD400; --paper: #F4F7FF; }
-:root[data-theme="oktoberfest"],
-[data-chip-theme="oktoberfest"] { --pop: #C97A12; --tint: #1B6E3C; --paper: #FFF7E8; }
+:root[data-theme="easter"], [data-chip-theme="easter"],
+:root[data-theme="carnaval"], [data-chip-theme="carnaval"],
+:root[data-theme="semana-santa"], [data-chip-theme="semana-santa"],
+:root[data-theme="santo-antonio"], [data-chip-theme="santo-antonio"] { --pop: #E86FB0; --tint: #7BD8E8; --paper: #FFF4FA; }
+:root[data-theme="halloween"], [data-chip-theme="halloween"],
+:root[data-theme="day-of-the-dead"], [data-chip-theme="day-of-the-dead"],
+:root[data-theme="karneval"], [data-chip-theme="karneval"] { --pop: #A855F7; --tint: #FF8A00; --paper: #FAF4FF; }
+:root[data-theme="fourth-of-july"], [data-chip-theme="fourth-of-july"],
+:root[data-theme="san-fermin"], [data-chip-theme="san-fermin"],
+:root[data-theme="tomatina"], [data-chip-theme="tomatina"] { --pop: #F0343F; --tint: #3B6EF5; --paper: #FFF5F5; }
+:root[data-theme="bastille-day"], [data-chip-theme="bastille-day"],
+:root[data-theme="fete-des-lumieres"], [data-chip-theme="fete-des-lumieres"],
+:root[data-theme="fete-de-la-musique"], [data-chip-theme="fete-de-la-musique"] { --pop: #5676F1; --tint: #FFD400; --paper: #F4F7FF; }
+:root[data-theme="oktoberfest"], [data-chip-theme="oktoberfest"],
+:root[data-theme="tag-der-deutschen-einheit"], [data-chip-theme="tag-der-deutschen-einheit"] { --pop: #C97A12; --tint: #1B6E3C; --paper: #FFF7E8; }
 :root[data-theme="custom"],
 [data-chip-theme="custom"] { --pop: #7B6CF0; --tint: #22C7D6; --paper: #F4F3FF; }
 
@@ -125,6 +133,43 @@ body {
   margin: 0;
 }
 .brand h1 em { color: var(--pop); font-style: normal; }
+
+/* Language picker lives in the masthead; options are generated from locales/. */
+.language-picker { display: flex; align-items: center; gap: 0.75rem; }
+.language-label {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #fff;
+}
+/* Same heavy border and offset shadow as the controls below, tinted with the
+   theme accent so it reads against the black masthead. */
+.language-select {
+  width: auto;
+  min-width: 12rem;
+  max-width: 100%;
+  min-height: 44px;
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  padding: 0.55rem 0.7rem;
+  border: 3px solid var(--pop);
+  border-radius: 0;
+  background: #fff;
+  color: var(--ink);
+  box-shadow: 4px 4px 0 var(--pop);
+  transition: transform 130ms ease, box-shadow 130ms ease;
+}
+.language-select:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--pop); }
+.language-select:focus-visible { outline-color: #fff; }
+@media (max-width: 640px) {
+  .language-picker { width: 100%; }
+  .language-select { flex: 1; min-width: 0; }
+}
 
 /* ============ Layout ============ */
 .app {

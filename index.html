@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <a class="skip-link" href="#controls">Skip to controls</a>
+  <a class="skip-link" href="#controls" data-i18n="ui.skipToControls">Skip to controls</a>
 
   <header class="masthead">
     <div class="masthead-inner">
@@ -17,7 +17,12 @@
           <path d="M11 2v28M21 2v28M2 11h28M2 21h28" fill="none" stroke="currentColor" stroke-width="2"/>
           <rect x="21" y="21" width="10" height="10" fill="var(--pop)"/>
         </svg>
-        <h1>Word Search <em>Maker</em></h1>
+        <h1 data-i18n-html="ui.brand">Word Search <em>Maker</em></h1>
+      </div>
+
+      <div class="language-picker">
+        <label class="language-label" for="language" data-i18n="ui.languageLabel">Language</label>
+        <select id="language" class="language-select" aria-label="Language" data-i18n-aria="ui.languageLabel"></select>
       </div>
     </div>
   </header>
@@ -27,42 +32,42 @@
 
     <!-- ============ Controls ============ -->
     <section class="panel controls" id="controls" aria-labelledby="controls-title">
-      <h2 id="controls-title" class="panel-title">Build your puzzle</h2>
+      <h2 id="controls-title" class="panel-title" data-i18n="ui.controlsTitle">Build your puzzle</h2>
 
       <label class="field">
-        <span>Puzzle title</span>
-        <input type="text" id="title" value="🦃 Happy Thanksgiving! 🥧" maxlength="60">
+        <span data-i18n="ui.puzzleTitleLabel">Puzzle title</span>
+        <input type="text" id="title" maxlength="60">
       </label>
 
       <fieldset class="field presets">
-        <legend>Word list preset</legend>
+        <legend data-i18n="ui.presetLegend">Word list preset</legend>
         <div class="preset-chips" id="preset-chips"></div>
       </fieldset>
 
       <label class="field">
-        <span>Words — one word or phrase per line</span>
-        <textarea id="words" rows="10" spellcheck="false" placeholder="TURKEY&#10;STUFFING&#10;PILGRIM"></textarea>
+        <span data-i18n="ui.wordsLabel">Words — one word or phrase per line</span>
+        <textarea id="words" rows="10" spellcheck="false" data-i18n-placeholder="ui.wordsPlaceholder"></textarea>
       </label>
 
       <p class="error" id="error" role="alert" hidden></p>
 
       <fieldset class="field">
-        <legend>Difficulty</legend>
-        <label class="check"><input type="checkbox" id="vertical" checked> Allow vertical words</label>
-        <label class="check"><input type="checkbox" id="diagonals" checked> Allow diagonal words</label>
-        <label class="check"><input type="checkbox" id="backwards" checked> Allow backwards words</label>
-        <label class="check"><input type="checkbox" id="overlaps" checked> Allow words to share letters</label>
+        <legend data-i18n="ui.difficultyLegend">Difficulty</legend>
+        <label class="check"><input type="checkbox" id="vertical" checked> <span data-i18n="ui.allowVertical">Allow vertical words</span></label>
+        <label class="check"><input type="checkbox" id="diagonals" checked> <span data-i18n="ui.allowDiagonals">Allow diagonal words</span></label>
+        <label class="check"><input type="checkbox" id="backwards" checked> <span data-i18n="ui.allowBackwards">Allow backwards words</span></label>
+        <label class="check"><input type="checkbox" id="overlaps" checked> <span data-i18n="ui.allowOverlaps">Allow words to share letters</span></label>
         <label class="field-inline">
-          <span>Filler letters</span>
+          <span data-i18n="ui.fillerLetters">Filler letters</span>
           <select id="fill-style">
-            <option value="random">Random A–Z</option>
-            <option value="wordly">Letters from the word list (harder)</option>
+            <option value="random" data-i18n="ui.fillRandom">Random letters</option>
+            <option value="wordly" data-i18n="ui.fillWordly">Letters from the word list (harder)</option>
           </select>
         </label>
         <label class="field-inline">
-          <span>Grid size</span>
+          <span data-i18n="ui.gridSize">Grid size</span>
           <select id="grid-size">
-            <option value="auto" selected>Auto</option>
+            <option value="auto" selected data-i18n="ui.gridAuto">Auto</option>
             <option value="8">8 × 8</option>
             <option value="10">10 × 10</option>
             <option value="12">12 × 12</option>
@@ -75,10 +80,10 @@
       </fieldset>
 
       <div class="actions">
-        <button id="generate" class="primary">Generate puzzle</button>
-        <button id="print">Print</button>
+        <button id="generate" class="primary" data-i18n="ui.generate">Generate puzzle</button>
+        <button id="print" data-i18n="ui.print">Print</button>
       </div>
-      <p class="hint">Tip: print from your browser's dialog — the layout is already fitted to US Letter with the word list below the grid. <kbd>⌘</kbd>/<kbd>Ctrl</kbd> + <kbd>Enter</kbd> generates from anywhere.</p>
+      <p class="hint" data-i18n-html="ui.hint">Tip: print from your browser's dialog — the layout is already fitted to US Letter with the word list below the grid. <kbd>⌘</kbd>/<kbd>Ctrl</kbd> + <kbd>Enter</kbd> generates from anywhere.</p>
     </section>
 
     <!-- ============ Puzzle output ============ -->
@@ -88,20 +93,20 @@
         <table class="grid" id="grid" aria-label="Word search grid"></table>
 
         <div class="wordbox" id="wordbox">
-          <p class="find-label" id="find-label">Find these <span id="word-count">0</span> words</p>
+          <p class="find-label" id="find-label" data-i18n-html="ui.findLabel">Find these <span id="word-count">0</span> words</p>
           <ul class="word-list" id="word-list" tabindex="0" aria-labelledby="find-label"></ul>
         </div>
 
         <div class="actions no-print">
           <button id="reveal">Show answer key</button>
-          <button id="regenerate">Shuffle new puzzle</button>
+          <button id="regenerate" data-i18n="ui.regenerate">Shuffle new puzzle</button>
         </div>
       </section>
 
       <!-- ============ Answer key (prints on its own page when revealed) ============ -->
       <section class="panel answers hidden" id="answers" aria-labelledby="answers-title">
-        <h2 id="answers-title" class="puzzle-title">Answer Key</h2>
-        <p class="answer-note">Highlighted, underlined cells show where each word is hidden.</p>
+        <h2 id="answers-title" class="puzzle-title" data-i18n="ui.answersTitle">Answer Key</h2>
+        <p class="answer-note" data-i18n="ui.answerNote">Highlighted, underlined cells show where each word is hidden.</p>
         <div id="answer-summary" class="sr-only"></div>
         <table class="grid" id="answer-grid" aria-label="Answer key grid"></table>
       </section>

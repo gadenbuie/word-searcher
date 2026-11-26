@@ -1,0 +1,208 @@
+{
+  "meta": {
+    "name": "English",
+    "dir": "ltr"
+  },
+  "ui": {
+    "skipToControls": "Skip to controls",
+    "brand": "Word Search <em>Maker</em>",
+    "pageTitle": "Word Search Maker — printable puzzles",
+    "languageLabel": "Language",
+    "controlsTitle": "Build your puzzle",
+    "puzzleTitleLabel": "Puzzle title",
+    "presetLegend": "Word list preset",
+    "wordsLabel": "Words — one word or phrase per line",
+    "wordsPlaceholder": "TURKEY\nSTUFFING\nPILGRIM",
+    "difficultyLegend": "Difficulty",
+    "allowVertical": "Allow vertical words",
+    "allowDiagonals": "Allow diagonal words",
+    "allowBackwards": "Allow backwards words",
+    "allowOverlaps": "Allow words to share letters",
+    "fillerLetters": "Filler letters",
+    "fillRandom": "Random letters",
+    "fillWordly": "Letters from the word list (harder)",
+    "gridSize": "Grid size",
+    "gridAuto": "Auto",
+    "generate": "Generate puzzle",
+    "print": "Print",
+    "hint": "Tip: print from your browser's dialog — the layout is already fitted to US Letter with the word list below the grid. <kbd>⌘</kbd>/<kbd>Ctrl</kbd> + <kbd>Enter</kbd> generates from anywhere.",
+    "puzzleTitleDefault": "Word Search",
+    "findLabel": "Find these <span id=\"word-count\">{{count}}</span> words",
+    "reveal": "Show answer key",
+    "hide": "Hide answer key",
+    "regenerate": "Shuffle new puzzle",
+    "answersTitle": "Answer Key",
+    "answerNote": "Highlighted, underlined cells show where each word is hidden.",
+    "gridAria": "Word search grid",
+    "answerGridAria": "Answer key grid",
+    "gridSizeAria": "{{label}}, {{rows}} rows by {{columns}} columns",
+    "wordLocations": "Word locations: ",
+    "partOfWord": "part of a hidden word",
+    "row": "row",
+    "column": "column",
+    "reading": "reading",
+    "alongGrid": "along the grid",
+    "dirRight": "right",
+    "dirLeft": "left",
+    "dirDown": "down",
+    "dirUp": "up",
+    "dirDownRight": "down-right",
+    "dirDownLeft": "down-left",
+    "dirUpRight": "up-right",
+    "dirUpLeft": "up-left",
+    "errorNoWords": "Add at least one word (2+ letters) to the list.",
+    "errorNoFit": "Couldn't fit all words in this grid — try a larger grid size or fewer/shorter words.",
+    "announceReady": "Puzzle ready. {{count}} words to find in a {{size}} by {{size}} grid.",
+    "announceAnswersShown": "Answer key shown. Word locations are listed after the note above the grid.",
+    "announceAnswersHidden": "Answer key hidden."
+  },
+  "presets": {
+    "thanksgiving": {
+      "label": "Thanksgiving",
+      "emoji": "🦃",
+      "title": "🦃 Happy Thanksgiving! 🥧",
+      "words": [
+        "TURKEY", "STUFFING", "CRANBERRY", "PUMPKIN PIE", "GRAVY", "MAYFLOWER",
+        "FAMILY", "FEAST", "HARVEST", "DRUMSTICK", "CORN", "YAM", "PIE", "ROLLS",
+        "BREAD", "CASSEROLE", "STUFFED", "BASTING", "LEFTOVERS", "CARVING",
+        "PARADE", "FOOTBALL", "MAIZE", "SQUASH", "BRINE", "BASTED", "GIBLETS",
+        "THAW", "TABLECLOTH", "CENTERPIECE", "CORNUCOPIA", "GOBBLE GOBBLE"
+      ]
+    },
+    "christmas": {
+      "label": "Christmas",
+      "emoji": "🎄",
+      "title": "🎄 Merry Christmas! 🎅",
+      "words": [
+        "SLEIGH", "REINDEER", "SNOWMAN", "MISTLETOE", "FIREPLACE", "CANDY CANE",
+        "EGGNOG", "GINGERBREAD", "WREATH", "STOCKING", "TINSEL", "JINGLE BELLS",
+        "SANTA CLAUS", "ELF", "CHRISTMAS TREE", "FROSTY", "NUTCRACKER",
+        "SNOWFLAKE", "CAROLS", "FRUITCAKE"
+      ]
+    },
+    "st-patricks": {
+      "label": "St. Patrick's",
+      "emoji": "☘️",
+      "title": "☘️ St. Patrick's Day 🍀",
+      "words": [
+        "SHAMROCK", "CLOVER", "PARADE", "GREEN", "DUBLIN", "HARP", "BAGPIPE",
+        "FESTIVAL", "MARCH", "IRISH", "PINS", "BAND", "RIVER", "LUCK", "GOLDEN",
+        "WHISTLE", "DANCE", "CITY", "SPRING", "FLOAT", "POCKET", "HAT", "MUSIC",
+        "CELEBRATION"
+      ]
+    },
+    "easter": {
+      "label": "Easter",
+      "emoji": "🐣",
+      "title": "🐣 Easter Egg Hunt 🐇",
+      "words": [
+        "CHOCOLATE", "BASKET", "RABBIT", "EGG", "HUNT", "SPRING", "DAFFODIL",
+        "BONNET", "PARADE", "CHICK", "MARZIPAN", "NEST", "PAINT", "BRUNCH",
+        "HOLIDAY", "APRIL", "SUNSHINE", "BLOSSOM", "MEADOW", "PICNIC", "CROCUS",
+        "HARE", "CANDY", "FAMILY"
+      ]
+    },
+    "halloween": {
+      "label": "Halloween",
+      "emoji": "🎃",
+      "title": "🎃 Halloween Night 👻",
+      "words": [
+        "PUMPKIN", "COSTUME", "CANDY", "GHOST", "WITCH", "HAUNTED", "MASK",
+        "TRICK OR TREAT", "LANTERN", "SKELETON", "BAT", "SPOOKY", "CHOCOLATE",
+        "PARTY", "OCTOBER", "NIGHT", "CREEPY", "CARVE", "CANDY CORN", "DECORATION",
+        "MONSTER", "PHANTOM", "GOBLIN", "SHADOWS"
+      ]
+    },
+    "fourth-of-july": {
+      "label": "Fourth of July",
+      "emoji": "🎆",
+      "title": "🎆 Fourth of July 🎇",
+      "words": [
+        "FIREWORKS", "BARBECUE", "PARADE", "FLAG", "PICNIC", "SPARKLER",
+        "COOKOUT", "CELEBRATION", "JULY", "FOURTH", "FIRECRACKER", "BALLOON",
+        "BAND", "LEMONADE", "WATERMELON", "LIBERTY", "EAGLE", "NATION",
+        "FESTIVAL", "SPARKS", "NIGHT", "FAMILY", "FRIENDS", "HOLIDAY"
+      ]
+    },
+    "bastille-day": {
+      "label": "Bastille Day",
+      "emoji": "🇫🇷",
+      "title": "🇫🇷 Bastille Day 🎆",
+      "words": [
+        "PARIS", "BASTILLE", "FIREWORKS", "PARADE", "FLAG", "JULY", "FOURTEENTH",
+        "CELEBRATION", "CONCERT", "STREET", "DANCE", "NATION", "HISTORY",
+        "REVOLUTION", "BAND", "TOWER", "EIFFEL", "CITY", "LUMIERE", "SUMMER",
+        "FESTIVAL", "FRANCE", "SQUARE", "TORCH"
+      ]
+    },
+    "oktoberfest": {
+      "label": "Oktoberfest",
+      "emoji": "🥨",
+      "title": "🥨 Oktoberfest 🍺",
+      "words": [
+        "BAVARIA", "BRATWURST", "PRETZEL", "OCTOBER", "FESTIVAL", "LEDERHOSEN",
+        "MUNICH", "MUSIC", "BAND", "TENT", "SAUSAGE", "BREAD", "CELEBRATION",
+        "HARVEST", "DANCE", "STEIN", "CROWD", "GERMANY", "AUTUMN", "BEER",
+        "ALPINE", "PARADE", "OOMPAH", "GARDEN"
+      ]
+    },
+    "fall": {
+      "label": "Fall",
+      "emoji": "🍂",
+      "title": "🍂 Fall Days 🍁",
+      "words": [
+        "ACORN", "AUTUMN", "CIDER", "FOLIAGE", "GARDEN", "HARVEST", "SCARECROW",
+        "NOVEMBER", "RAKE", "OCTOBER", "MAPLE", "PUMPKIN", "SWEATER", "WINDSWEPT",
+        "GOURD", "HAYRIDE", "FALCON", "CORN MAZE", "LEAF PILE", "APPLE ORCHARD"
+      ]
+    },
+    "soccer-worldcup": {
+      "label": "World Cup",
+      "emoji": "⚽",
+      "title": "⚽ World Cup 2026 — All 48 Teams 🏆",
+      "words": [
+        "MEXICO", "SOUTH AFRICA", "SOUTH KOREA", "CZECHIA",
+        "CANADA", "BOSNIA & HERZEGOVINA", "QATAR", "SWITZERLAND",
+        "BRAZIL", "MOROCCO", "HAITI", "SCOTLAND",
+        "UNITED STATES", "PARAGUAY", "AUSTRALIA", "TURKIYE",
+        "GERMANY", "CURACAO", "IVORY COAST", "ECUADOR",
+        "NETHERLANDS", "JAPAN", "SWEDEN", "TUNISIA",
+        "BELGIUM", "EGYPT", "IRAN", "NEW ZEALAND",
+        "SPAIN", "CABO VERDE", "SAUDI ARABIA", "URUGUAY",
+        "FRANCE", "SENEGAL", "IRAQ", "NORWAY",
+        "ARGENTINA", "ALGERIA", "AUSTRIA", "JORDAN",
+        "PORTUGAL", "DR CONGO", "UZBEKISTAN", "COLOMBIA",
+        "ENGLAND", "CROATIA", "GHANA", "PANAMA"
+      ]
+    },
+    "soccer-europe": {
+      "label": "Europe",
+      "emoji": "⚽",
+      "title": "⚽ European Soccer 🏟️",
+      "words": [
+        "PREMIER LEAGUE", "LA LIGA", "SERIE A", "BUNDESLIGA", "LIGUE 1", "ARSENAL",
+        "LIVERPOOL", "REAL MADRID", "BARCELONA", "BAYERN MUNICH", "INTER MILAN",
+        "AC MILAN", "PSG", "JUVENTUS", "MANCHESTER CITY", "TOTTENHAM", "CHELSEA",
+        "ATLETICO MADRID", "NAPOLI", "AJAX"
+      ]
+    },
+    "soccer-mls": {
+      "label": "MLS",
+      "emoji": "⚽",
+      "title": "⚽ Major League Soccer 🥅",
+      "words": [
+        "INTER MIAMI", "LAFC", "LA GALAXY", "ATLANTA UNITED", "SEATTLE SOUNDERS",
+        "PORTLAND TIMBERS", "AUSTIN FC", "NASHVILLE SC", "COLUMBUS CREW",
+        "PHILADELPHIA UNION", "NEW YORK RED BULLS", "ORLANDO CITY", "FC CINCINNATI",
+        "SPORTING KC", "MINNESOTA UNITED", "ST LOUIS CITY", "TORONTO FC",
+        "VANCOUVER WHITECAPS", "CHARLOTTE FC", "SAN DIEGO FC"
+      ]
+    },
+    "custom": {
+      "label": "Custom",
+      "emoji": "✏️",
+      "title": "",
+      "words": []
+    }
+  }
+}

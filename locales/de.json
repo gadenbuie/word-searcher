@@ -1,0 +1,232 @@
+{
+  "meta": {
+    "name": "Deutsch",
+    "dir": "ltr"
+  },
+  "ui": {
+    "skipToControls": "Zu den Einstellungen springen",
+    "brand": "Wortsuchrätsel <em>Ersteller</em>",
+    "pageTitle": "Wortsuchrätsel-Ersteller — zum Ausdrucken",
+    "languageLabel": "Sprache",
+    "controlsTitle": "Wortsuchrätsel erstellen",
+    "puzzleTitleLabel": "Titel des Wortsuchrätsels",
+    "presetLegend": "Vorgefertigte Wortliste",
+    "wordsLabel": "Wörter — ein Wort oder eine Phrase pro Zeile",
+    "wordsPlaceholder": "PUTEN\nFÜLLUNG\nPILGER",
+    "difficultyLegend": "Schwierigkeit",
+    "allowVertical": "Vertikale Wörter erlauben",
+    "allowDiagonals": "Diagonale Wörter erlauben",
+    "allowBackwards": "Rückwärts lesende Wörter erlauben",
+    "allowOverlaps": "Wörter dürfen Buchstaben teilen",
+    "fillerLetters": "Füllbuchstaben",
+    "fillRandom": "Zufällige Buchstaben",
+    "fillWordly": "Buchstaben aus der Wortliste (schwieriger)",
+    "gridSize": "Rastergröße",
+    "gridAuto": "Automatisch",
+    "generate": "Wortsuchrätsel erstellen",
+    "print": "Drucken",
+    "hint": "Tipp: Drucken Sie über das Dialogfenster Ihres Browsers — das Layout ist bereits für US Letter mit der Wortliste unter dem Raster angepasst. <kbd>⌘</kbd>/<kbd>Ctrl</kbd> + <kbd>Enter</kbd> erstellt von überall.",
+    "puzzleTitleDefault": "Wortsuchrätsel",
+    "findLabel": "Finde diese <span id=\"word-count\">{{count}}</span> Wörter",
+    "reveal": "Lösung anzeigen",
+    "hide": "Lösung ausblenden",
+    "regenerate": "Neues Wortsuchrätsel erstellen",
+    "answersTitle": "Lösung",
+    "answerNote": "Hervorgehobene und unterstrichene Felder zeigen, wo jedes Wort versteckt ist.",
+    "gridAria": "Wortsuchraster",
+    "answerGridAria": "Lösungsraster",
+    "gridSizeAria": "{{label}}, {{rows}} Zeilen und {{columns}} Spalten",
+    "wordLocations": "Positionen der Wörter: ",
+    "partOfWord": "Teil eines versteckten Wortes",
+    "row": "Zeile",
+    "column": "Spalte",
+    "reading": "lesen",
+    "alongGrid": "entlang des Rasters",
+    "dirRight": "nach rechts",
+    "dirLeft": "nach links",
+    "dirDown": "nach unten",
+    "dirUp": "nach oben",
+    "dirDownRight": "unten rechts",
+    "dirDownLeft": "unten links",
+    "dirUpRight": "oben rechts",
+    "dirUpLeft": "oben links",
+    "errorNoWords": "Füge mindestens ein Wort (mit 2 oder mehr Buchstaben) zur Liste hinzu.",
+    "errorNoFit": "Alle Wörter passen nicht in dieses Raster — versuchen Sie eine größere Rastergröße oder weniger/kürzere Wörter.",
+    "announceReady": "Wortsuchrätsel bereit. {{count}} Wörter in einem {{size}} × {{size}} Raster zu finden.",
+    "announceAnswersShown": "Lösung angezeigt. Die Wortpositionen sind nach dem Hinweis über dem Raster aufgeführt.",
+    "announceAnswersHidden": "Lösung ausgeblendet."
+  },
+  "presets": {
+    "thanksgiving": {
+      "label": "Erntedankfest",
+      "emoji": "🦃",
+      "title": "🦃 Frohes Erntedankfest! 🥧",
+      "words": [
+        "PUTEN", "FÜLLUNG", "PREISELBEEREN", "KÜRBISTORTE", "SAUCE", "MAYFLOWER",
+        "FAMILIE", "FESTMAHL", "ERNTE", "KEULE", "MAIS", "SÜSSKARTOFFEL", "TORTE", "BRÖTCHEN",
+        "BROT", "AUFLAUF", "GEFÜLLT", "GEBRATEN", "RESTE", "ZERLEGEN",
+        "PARADE", "FUSSBALL", "KORN", "KÜRBIS", "SALZLAKE", "BEGIESSEN", "INNEREIEN",
+        "AUFTAUEN", "TISCHDECKE", "TISCHSCHMUCK", "FÜLLHORN", "GUT GUT"
+      ]
+    },
+    "christmas": {
+      "label": "Weihnachten",
+      "emoji": "🎄",
+      "title": "🎄 Frohe Weihnachten! 🎅",
+      "words": [
+        "SCHLITTEN", "RENTIER", "SCHNEEMANN", "MISTEL", "KAMIN", "BONBONSTANGEN",
+        "EIERLIKÖR", "LEBKUCHEN", "KRANZ", "STRUMPF", "LICHTER", "GLOCKEN",
+        "WEIHNACHTSMANN", "ELF", "WEIHNACHTSBAUM", "FROSTIG", "NUSSKNACKER",
+        "SCHNEEFLOCKE", "WEIHNACHTSLIEDER", "FRUCHTKUCHEN"
+      ]
+    },
+    "st-patricks": {
+      "label": "St. Patrick",
+      "emoji": "☘️",
+      "title": "☘️ St. Patrick's Day 🍀",
+      "words": [
+        "KLEEBLATT", "BLATT", "PARADE", "GRÜN", "DUBLIN", "HARFE", "SACKPFEIFE",
+        "FESTIVAL", "MÄRZ", "IRLÄNDISCH", "STECKNADELN", "KAPELLE", "FLUSS", "GLÜCK", "GOLDEN",
+        "PFEIFFE", "TANZ", "STADT", "FRÜHLING", "WAGEN", "TASCHE", "HUT", "MUSIK",
+        "FEIER"
+      ]
+    },
+    "easter": {
+      "label": "Ostern",
+      "emoji": "🐣",
+      "title": "🐣 Ostereiersuche 🐇",
+      "words": [
+        "SCHOKOLADE", "KORB", "HASE", "EI", "SUCHE", "FRÜHLING", "NARZISSE",
+        "HUT", "PARADE", "KÜKEN", "MARZIPAN", "NEST", "MALEN", "BRUNCH",
+        "FEIERTAG", "APRIL", "SONNENSCHEIN", "BLÜTE", "WIESE", "PICKNICK", "KROKUS",
+        "LANGOHR", "SÜSSIGKEIT", "FAMILIE"
+      ]
+    },
+    "halloween": {
+      "label": "Halloween",
+      "emoji": "🎃",
+      "title": "🎃 Halloween-Nacht 👻",
+      "words": [
+        "KÜRBIS", "KOSTÜM", "SÜSSIGKEIT", "GEIST", "HEXE", "VERHEXT", "MASKE",
+        "SÜSSES ODER SAURES", "LATERNE", "SKELETT", "FLEDERMAUS", "GRUSELIG", "SCHOKOLADE",
+        "PARTY", "OKTOBER", "NACHT", "UNHEIMLICH", "SCHNITZEN", "ZUCKERMAIS", "DEKORATION",
+        "MONSTER", "GESPENST", "KOBOLD", "SCHATTEN"
+      ]
+    },
+    "fourth-of-july": {
+      "label": "4. Juli",
+      "emoji": "🎆",
+      "title": "🎆 4. Juli 🎇",
+      "words": [
+        "FEUERWERK", "GRILLEN", "PARADE", "FAHNE", "PICKNICK", "WUNDERKERZEN",
+        "GRILLPARTY", "FEIER", "JULI", "VIERTE", "KNALLFROSCH", "BALLON",
+        "KAPELLE", "LIMONADE", "WASSERMELONE", "FREIHEIT", "ADLER", "NATION",
+        "FESTIVAL", "FUNKEN", "NACHT", "FAMILIE", "FREUNDE", "FEIERTAG"
+      ]
+    },
+    "bastille-day": {
+      "label": "Bastillentag",
+      "emoji": "🇫🇷",
+      "title": "🇫🇷 Bastillentag 🎆",
+      "words": [
+        "PARIS", "BASTILLE", "FEUERWERK", "PARADE", "FAHNE", "JULI", "VIERZEHNTE",
+        "FEIER", "KONZERT", "STRASSE", "TANZ", "NATION", "GESCHICHTE",
+        "REVOLUTION", "KAPELLE", "TURM", "EIFFEL", "STADT", "LICHT", "SOMMER",
+        "FESTIVAL", "FRANKREICH", "PLATZ", "FACKEL"
+      ]
+    },
+    "oktoberfest": {
+      "label": "Oktoberfest",
+      "emoji": "🥨",
+      "title": "🥨 Oktoberfest 🍺",
+      "words": [
+        "BAYERN", "BRATWURST", "BREZEL", "OKTOBER", "FESTIVAL", "LEDERHOSEN",
+        "MÜNCHEN", "MUSIK", "KAPELLE", "ZELT", "WURST", "BROT", "FEIER",
+        "ERNTE", "TANZ", "KRUG", "MENGE", "DEUTSCHLAND", "HERBST", "BIER",
+        "ALPIN", "PARADE", "BLASMUSIK", "GARTEN"
+      ]
+    },
+    "fall": {
+      "label": "Herbst",
+      "emoji": "🍂",
+      "title": "🍂 Herbsttage 🍁",
+      "words": [
+        "EICHEL", "HERBST", "APFELCIDRE", "LAUB", "GARTEN", "ERNTE", "VOGELSCHEUCHE",
+        "NOVEMBER", "HARKE", "OKTOBER", "AHORN", "KÜRBIS", "STRICKJACKE", "WINDIG",
+        "ZIERKÜRBIS", "HEUFAHRT", "FALKE", "MAISLABYRINTH", "LAUBHAUFEN", "APFELGARTEN"
+      ]
+    },
+    "soccer-worldcup": {
+      "label": "Weltmeisterschaft",
+      "emoji": "⚽",
+      "title": "⚽ WM 2026 — Alle 48 Teams 🏆",
+      "words": [
+        "MEXIKO", "SÜDAFRIKA", "SÜDKOREA", "TSCHECHIEN",
+        "KANADA", "BOSNIEN-HERZEGOWINA", "KATAR", "SCHWEIZ",
+        "BRASILIEN", "MAROKKO", "HAITI", "SCHOTTLAND",
+        "VEREINIGTE STAATEN", "PARAGUAY", "AUSTRALIEN", "TÜRKEI",
+        "DEUTSCHLAND", "CURAÇAO", "ELFENBEINKÜSTE", "ECUADOR",
+        "NIEDERLANDE", "JAPAN", "SCHWEDEN", "TUNESIEN",
+        "BELGIEN", "ÄGYPTEN", "IRAN", "NEUSEELAND",
+        "SPANIEN", "KAP VERDE", "SAUDI-ARABIEN", "URUGUAY",
+        "FRANKREICH", "SENEGAL", "IRAK", "NORWEGEN",
+        "ARGENTINIEN", "ALGERIEN", "ÖSTERREICH", "JORDANIEN",
+        "PORTUGAL", "RD KONGO", "USBEKISTAN", "KOLUMBIEN",
+        "ENGLAND", "KROATIEN", "GHANA", "PANAMA"
+      ]
+    },
+    "soccer-europe": {
+      "label": "Europa",
+      "emoji": "⚽",
+      "title": "⚽ Europäischer Fußball 🏟️",
+      "words": [
+        "PREMIER LEAGUE", "LA LIGA", "SERIE A", "BUNDESLIGA", "LIGUE 1", "ARSENAL",
+        "LIVERPOOL", "REAL MADRID", "BARCELONA", "BAYERN MÜNCHEN", "INTER MAILAND",
+        "AC MAILAND", "PSG", "JUVENTUS", "MANCHESTER CITY", "TOTTENHAM", "CHELSEA",
+        "ATLÉTICO MADRID", "NEAPEL", "AJAX"
+      ]
+    },
+    "soccer-mls": {
+      "label": "MLS",
+      "emoji": "⚽",
+      "title": "⚽ Major League Soccer 🥅",
+      "words": [
+        "INTER MIAMI", "LAFC", "LA GALAXY", "ATLANTA UNITED", "SEATTLE SOUNDERS",
+        "PORTLAND TIMBERS", "AUSTIN FC", "NASHVILLE SC", "COLUMBUS CREW",
+        "PHILADELPHIA UNION", "NEW YORK RED BULLS", "ORLANDO CITY", "FC CINCINNATI",
+        "SPORTING KC", "MINNESOTA UNITED", "ST LOUIS CITY", "TORONTO FC",
+        "VANCOUVER WHITECAPS", "CHARLOTTE FC", "SAN DIEGO FC"
+      ]
+    },
+    "tag-der-deutschen-einheit": {
+      "label": "Tag der Deutschen Einheit",
+      "emoji": "🇩🇪",
+      "title": "🇩🇪 Tag der Deutschen Einheit 🎉",
+      "words": [
+        "DEUTSCHLAND", "EINHEIT", "OKTOBER", "BERLIN", "BRANDENBURGER TOR",
+        "FANFARE", "FEUERWERK", "REDE", "FEST", "PARADE",
+        "OST", "WEST", "MAUER", "FRIEDEN", "FREIHEIT", "NATION",
+        "BUNDESLAND", "FAHNE", "SCHWARZ", "ROT", "GOLD", "ADLER",
+        "WIR SIND EIN VOLK", "JUBEL"
+      ]
+    },
+    "karneval": {
+      "label": "Karneval",
+      "emoji": "🎭",
+      "title": "🎭 Karneval in Köln 🎉",
+      "words": [
+        "KÖLN", "KARNEVAL", "FASTNACHT", "UMZUG", "MASKEN",
+        "KOSTÜM", "NARREN", "JECK", "WAGEN", "MUSIK",
+        "TAMM TAMM", "SCHLAGER", "BÜHNE", "KONFETTI", "LACHE",
+        "TANZ", "FEST", "KNEIPE", "KÖLSCH", "SAMSTAG",
+        "SONNTAG", "ROSENMONTAG", "ASCHERMITTWOCH", "PRINZ", "JUNGFER"
+      ]
+    },
+    "custom": {
+      "label": "Benutzerdefiniert",
+      "emoji": "✏️",
+      "title": "",
+      "words": []
+    }
+  }
+}

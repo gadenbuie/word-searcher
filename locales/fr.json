@@ -1,0 +1,230 @@
+{
+  "meta": {
+    "name": "Français",
+    "dir": "ltr"
+  },
+  "ui": {
+    "skipToControls": "Aller aux contrôles",
+    "brand": "Mots Cachés <em>Créateur</em>",
+    "pageTitle": "Créateur de Mots Cachés — grilles à imprimer",
+    "languageLabel": "Langue",
+    "controlsTitle": "Créez votre grille",
+    "puzzleTitleLabel": "Titre de la grille",
+    "presetLegend": "Liste de mots prédéfinie",
+    "wordsLabel": "Mots — un mot ou une expression par ligne",
+    "wordsPlaceholder": "DINDON\nFARCE\nPELERIN",
+    "difficultyLegend": "Difficulté",
+    "allowVertical": "Autoriser les mots verticaux",
+    "allowDiagonals": "Autoriser les mots en diagonale",
+    "allowBackwards": "Autoriser les mots à l'envers",
+    "allowOverlaps": "Autoriser les mots à partager des lettres",
+    "fillerLetters": "Lettres de remplissage",
+    "fillRandom": "Lettres aléatoires",
+    "fillWordly": "Lettres de la liste de mots (plus difficile)",
+    "gridSize": "Taille de la grille",
+    "gridAuto": "Auto",
+    "generate": "Générer la grille",
+    "print": "Imprimer",
+    "hint": "Astuce : imprimez depuis la boîte de dialogue de votre navigateur — la mise en page est déjà adaptée au format Lettre US avec la liste de mots sous la grille. <kbd>⌘</kbd>/<kbd>Ctrl</kbd> + <kbd>Enter</kbd> génère depuis n'importe où.",
+    "puzzleTitleDefault": "Mots Cachés",
+    "findLabel": "Trouvez ces <span id=\"word-count\">{{count}}</span> mots",
+    "reveal": "Afficher la solution",
+    "hide": "Masquer la solution",
+    "regenerate": "Générer une autre grille",
+    "answersTitle": "Solution",
+    "answerNote": "Les cases surlignées et soulignées montrent où chaque mot est caché.",
+    "gridAria": "Grille de mots cachés",
+    "answerGridAria": "Grille de la solution",
+    "gridSizeAria": "{{label}}, {{rows}} lignes sur {{columns}} colonnes",
+    "wordLocations": "Emplacement des mots : ",
+    "partOfWord": "partie d'un mot caché",
+    "row": "ligne",
+    "column": "colonne",
+    "reading": "lecture",
+    "alongGrid": "le long de la grille",
+    "dirRight": "vers la droite",
+    "dirLeft": "vers la gauche",
+    "dirDown": "vers le bas",
+    "dirUp": "vers le haut",
+    "dirDownRight": "en bas à droite",
+    "dirDownLeft": "en bas à gauche",
+    "dirUpRight": "en haut à droite",
+    "dirUpLeft": "en haut à gauche",
+    "errorNoWords": "Ajoutez au moins un mot (de 2 lettres ou plus) à la liste.",
+    "errorNoFit": "Impossible de placer tous les mots dans cette grille — essayez une taille plus grande ou moins de mots (ou des mots plus courts).",
+    "announceReady": "Grille prête. {{count}} mots à trouver dans une grille de {{size}} sur {{size}}.",
+    "announceAnswersShown": "Solution affichée. Les emplacements des mots sont indiqués après la note au-dessus de la grille.",
+    "announceAnswersHidden": "Solution masquée."
+  },
+  "presets": {
+    "thanksgiving": {
+      "label": "Thanksgiving",
+      "emoji": "🦃",
+      "title": "🦃 Joyeux Thanksgiving ! 🥧",
+      "words": [
+        "DINDE", "FARCE", "CANNEBERGE", "TARTE À LA CITROUILLE", "SAUCE", "MAYFLOWER",
+        "FAMILLE", "FESTIN", "RÉCOLTE", "CUISSE", "MAÏS", "PATATE DOUCE", "TARTE", "PETITS PAINS",
+        "PAIN", "GRATIN", "FARCI", "RÔTI", "RESTES", "DÉCOUPE",
+        "DÉFILÉ", "FOOTBALL", "ÉPI DE MAÏS", "COURGE", "SAUMURE", "AROSER", "ABATS",
+        "DÉGELER", "NAPPE", "CENTRE DE TABLE", "CORNE D'ABONDANCE", "GLOUGLOU"
+      ]
+    },
+    "christmas": {
+      "label": "Noël",
+      "emoji": "🎄",
+      "title": "🎄 Joyeux Noël ! 🎅",
+      "words": [
+        "TRAINEAU", "RENNE", "BONHOMME DE NEIGE", "GUI", "CHEMINÉE", "BÂTON DE BONBON",
+        "LAIT DE POULE", "PAIN D'ÉPICES", "COURONNE", "BAS", "GUIRLANDE", "CLOCHETTES",
+        "PÈRE NOËL", "ELFE", "SAPIN DE NOËL", "GELÉ", "CASSE-NOISETTE",
+        "FLOCON", "CHANTS DE NOËL", "FRUIT CONFIT"
+      ]
+    },
+    "st-patricks": {
+      "label": "Saint-Patrick",
+      "emoji": "☘️",
+      "title": "☘️ Saint-Patrick 🍀",
+      "words": [
+        "TRÈFLE", "FEUILLE", "DÉFILÉ", "VERT", "DUBLIN", "HARPE", "CORNEMUSE",
+        "FESTIVAL", "MARS", "IRLANDAIS", "ÉPINGLES", "FANFARE", "RIVIÈRE", "CHANCE", "DORÉ",
+        "SIFFLET", "DANSE", "VILLE", "PRINTEMPS", "CHAR", "POCHE", "CHAPEAU", "MUSIQUE",
+        "CÉLÉBRATION"
+      ]
+    },
+    "easter": {
+      "label": "Pâques",
+      "emoji": "🐣",
+      "title": "🐣 Chasse aux œufs de Pâques 🐇",
+      "words": [
+        "CHOCOLAT", "PANIER", "LAPIN", "ŒUF", "CHASSE", "PRINTEMPS", "JONQUILLE",
+        "CHAPEAU", "DÉFILÉ", "POUSSIN", "MASSEPAIN", "NID", "PEINTURE", "BRUNCH",
+        "FÊTE", "AVRIL", "SOLEIL", "FLEUR", "PRAIRIE", "PIQUE-NIQUE", "CROCUS",
+        "LIÈVRE", "BONBON", "FAMILLE"
+      ]
+    },
+    "halloween": {
+      "label": "Halloween",
+      "emoji": "🎃",
+      "title": "🎃 Nuit d'Halloween 👻",
+      "words": [
+        "CITROUILLE", "DÉGUISEMENT", "BONBON", "FANTÔME", "SORCIÈRE", "HANTÉ", "MASQUE",
+        "TRUC OU TRAIT", "LANTERNE", "SQUELETTE", "CHAUVE-SOURIS", "EFFRAYANT", "CHOCOLAT",
+        "FÊTE", "OCTOBRE", "NUIT", "MACABRE", "SCULPTER", "MAÏS SUCRÉ", "DÉCORATION",
+        "MONSTRE", "SPECTRE", "LUTIN", "OMBRES"
+      ]
+    },
+    "fourth-of-july": {
+      "label": "4 juillet",
+      "emoji": "🎆",
+      "title": "🎆 4 juillet 🎇",
+      "words": [
+        "FEUX D'ARTIFICE", "BARBECUE", "DÉFILÉ", "DRAPEAU", "PIQUE-NIQUE", "FUSÉE",
+        "GRILLADE", "CÉLÉBRATION", "JUILLET", "QUATRE", "PÉTARD", "BALLON",
+        "FANFARE", "LIMONADE", "PASTÈQUE", "LIBERTÉ", "AIGLE", "NATION",
+        "FESTIVAL", "ÉTINCELLES", "NUIT", "FAMILLE", "AMIS", "FÊTE"
+      ]
+    },
+    "bastille-day": {
+      "label": "Fête de la Bastille",
+      "emoji": "🇫🇷",
+      "title": "🇫🇷 Fête de la Bastille 🎆",
+      "words": [
+        "PARIS", "BASTILLE", "FEUX D'ARTIFICE", "DÉFILÉ", "DRAPEAU", "JUILLET", "QUATORZE",
+        "CÉLÉBRATION", "CONCERT", "RUE", "DANSE", "NATION", "HISTOIRE",
+        "RÉVOLUTION", "FANFARE", "TOUR", "EIFFEL", "VILLE", "LUMIÈRE", "ÉTÉ",
+        "FESTIVAL", "FRANCE", "PLACE", "TORCHE"
+      ]
+    },
+    "oktoberfest": {
+      "label": "Oktoberfest",
+      "emoji": "🥨",
+      "title": "🥨 Oktoberfest 🍺",
+      "words": [
+        "BAVIÈRE", "SAUCISSE", "BRETZEL", "OCTOBRE", "FESTIVAL", "LEDERHOSEN",
+        "MUNICH", "MUSIQUE", "FANFARE", "TENTE", "CHARCUTERIE", "PAIN", "CÉLÉBRATION",
+        "RÉCOLTE", "DANSE", "CHOPPE", "FOULE", "ALLEMAGNE", "AUTOMNE", "BIÈRE",
+        "ALPIN", "DÉFILÉ", "JARDIN", "FÊTE"
+      ]
+    },
+    "fall": {
+      "label": "Automne",
+      "emoji": "🍂",
+      "title": "🍂 Jours d'automne 🍁",
+      "words": [
+        "GLAND", "AUTOMNE", "CIDRE", "FEUILLES", "JARDIN", "RÉCOLTE", "ÉPOUVANTAIL",
+        "NOVEMBRE", "RÂTEAU", "OCTOBRE", "ÉRABLE", "CITROUILLE", "PULL", "VENTEUX",
+        "COURGE", "BALADE EN FOIN", "FAUCON", "LABYRINTHE DE MAÏS", "TAS DE FEUILLES", "VERGER DE POMMES"
+      ]
+    },
+    "soccer-worldcup": {
+      "label": "Coupe du monde",
+      "emoji": "⚽",
+      "title": "⚽ Coupe du monde 2026 — Les 48 équipes 🏆",
+      "words": [
+        "MEXIQUE", "AFRIQUE DU SUD", "CORÉE DU SUD", "TCHÉQUIE",
+        "CANADA", "BOSNIE-HERZÉGOVINE", "QATAR", "SUISSE",
+        "BRÉSIL", "MAROC", "HAÏTI", "ÉCOSSE",
+        "ÉTATS-UNIS", "PARAGUAY", "AUSTRALIE", "TURQUIE",
+        "ALLEMAGNE", "CURAÇAO", "CÔTE D'IVOIRE", "ÉQUATEUR",
+        "PAYS-BAS", "JAPON", "SUÈDE", "TUNISIE",
+        "BELGIQUE", "ÉGYPTE", "IRAN", "NOUVELLE-ZÉLANDE",
+        "ESPAGNE", "CAP-VERT", "ARABIE SAOUDITE", "URUGUAY",
+        "FRANCE", "SÉNÉGAL", "IRAQ", "NORVÈGE",
+        "ARGENTINE", "ALGÉRIE", "AUTRICHE", "JORDANIE",
+        "PORTUGAL", "RD CONGO", "OUZBÉKISTAN", "COLOMBIE",
+        "ANGLETERRE", "CROATIE", "GHANA", "PANAMA"
+      ]
+    },
+    "soccer-europe": {
+      "label": "Europe",
+      "emoji": "⚽",
+      "title": "⚽ Football européen 🏟️",
+      "words": [
+        "PREMIER LEAGUE", "LIGA", "SERIE A", "BUNDESLIGA", "LIGUE 1", "ARSENAL",
+        "LIVERPOOL", "REAL MADRID", "BARCELONA", "BAYERN MUNICH", "INTER MILAN",
+        "AC MILAN", "PSG", "JUVENTUS", "MANCHESTER CITY", "TOTTENHAM", "CHELSEA",
+        "ATLÉTICO MADRID", "NAPLES", "AJAX"
+      ]
+    },
+    "soccer-mls": {
+      "label": "MLS",
+      "emoji": "⚽",
+      "title": "⚽ Major League Soccer 🥅",
+      "words": [
+        "INTER MIAMI", "LAFC", "LA GALAXY", "ATLANTA UNITED", "SEATTLE SOUNDERS",
+        "PORTLAND TIMBERS", "AUSTIN FC", "NASHVILLE SC", "COLUMBUS CREW",
+        "PHILADELPHIA UNION", "NEW YORK RED BULLS", "ORLANDO CITY", "FC CINCINNATI",
+        "SPORTING KC", "MINNESOTA UNITED", "ST LOUIS CITY", "TORONTO FC",
+        "VANCOUVER WHITECAPS", "CHARLOTTE FC", "SAN DIEGO FC"
+      ]
+    },
+    "fete-des-lumieres": {
+      "label": "Fête des Lumières",
+      "emoji": "🕯️",
+      "title": "🕯️ Fête des Lumières — Lyon ✨",
+      "words": [
+        "LYON", "LUMIÈRE", "BOUGIE", "DÉCEMBRE", "FÊTE", "VILLE",
+        "FENÊTRE", "ILLUMINATION", "SPECTACLE", "CONCERT", "RUE", "PONT",
+        "RHÔNE", "SAÔNE", "CROIX ROUSSE", "FOURVIÈRE", "BASILIQUE", "NOTRE DAME",
+        "MARCHÉ", "BONBON", "VIN", "CIEL", "ÉTOILE", "MAGIE"
+      ]
+    },
+    "fete-de-la-musique": {
+      "label": "Fête de la Musique",
+      "emoji": "🎵",
+      "title": "🎵 Fête de la Musique 🎶",
+      "words": [
+        "MUSIQUE", "JUIN", "CONCERT", "SCÈNE", "GUITARE", "PIANO",
+        "VIOLON", "TAMBOUR", "TROMPETTE", "CHANSON", "CHANTEUR", "ORCHESTRE",
+        "PARIS", "RUE", "PLACE", "FESTIVAL", "DANSE", "FÊTE",
+        "AMPLIFICATEUR", "MICRO", "PUBLIC", "SOIRÉE", "ÉTÉ", "RYTHME"
+      ]
+    },
+    "custom": {
+      "label": "Personnalisé",
+      "emoji": "✏️",
+      "title": "",
+      "words": []
+    }
+  }
+}

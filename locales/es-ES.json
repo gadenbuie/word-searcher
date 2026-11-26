@@ -1,0 +1,274 @@
+{
+  "meta": {
+    "name": "Español (España)",
+    "dir": "ltr"
+  },
+  "ui": {
+    "skipToControls": "Saltar a los controles",
+    "brand": "Buscapalabras <em>Creador</em>",
+    "pageTitle": "Creador de Buscapalabras — para imprimir",
+    "languageLabel": "Idioma",
+    "controlsTitle": "Crea tu buscapalabras",
+    "puzzleTitleLabel": "Título del buscapalabras",
+    "presetLegend": "Lista de palabras predefinida",
+    "wordsLabel": "Palabras — una palabra o frase por línea",
+    "wordsPlaceholder": "PAVO\nRELLENO\nTURCO",
+    "difficultyLegend": "Dificultad",
+    "allowVertical": "Permitir palabras verticales",
+    "allowDiagonals": "Permitir palabras diagonales",
+    "allowBackwards": "Permitir palabras al revés",
+    "allowOverlaps": "Permitir que las palabras compartan letras",
+    "fillerLetters": "Letras de relleno",
+    "fillRandom": "Letras aleatorias",
+    "fillWordly": "Letras de la lista de palabras (más difícil)",
+    "gridSize": "Tamaño de la cuadrícula",
+    "gridAuto": "Automático",
+    "generate": "Generar buscapalabras",
+    "print": "Imprimir",
+    "hint": "Consejo: imprime desde el cuadro de diálogo de tu navegador; la maquetación ya está ajustada a tamaño A4 con la lista de palabras debajo de la cuadrícula. <kbd>⌘</kbd>/<kbd>Ctrl</kbd> + <kbd>Enter</kbd> genera desde cualquier lugar.",
+    "puzzleTitleDefault": "Buscapalabras",
+    "findLabel": "Encuentra estas <span id=\"word-count\">{{count}}</span> palabras",
+    "reveal": "Mostrar solución",
+    "hide": "Ocultar solución",
+    "regenerate": "Generar otro buscapalabras",
+    "answersTitle": "Solución",
+    "answerNote": "Las celdas resaltadas y subrayadas muestran dónde se esconde cada palabra.",
+    "gridAria": "Cuadrícula del buscapalabras",
+    "answerGridAria": "Cuadrícula de la solución",
+    "gridSizeAria": "{{label}}, {{rows}} filas por {{columns}} columnas",
+    "wordLocations": "Ubicación de las palabras: ",
+    "partOfWord": "parte de una palabra oculta",
+    "row": "fila",
+    "column": "columna",
+    "reading": "leyendo",
+    "alongGrid": "a lo largo de la cuadrícula",
+    "dirRight": "hacia la derecha",
+    "dirLeft": "hacia la izquierda",
+    "dirDown": "hacia abajo",
+    "dirUp": "hacia arriba",
+    "dirDownRight": "hacia abajo a la derecha",
+    "dirDownLeft": "hacia abajo a la izquierda",
+    "dirUpRight": "hacia arriba a la derecha",
+    "dirUpLeft": "hacia arriba a la izquierda",
+    "errorNoWords": "Agrega al menos una palabra (de 2 o más letras) a la lista.",
+    "errorNoFit": "No caben todas las palabras en esta cuadrícula: prueba un tamaño mayor o usa menos palabras (o más cortas).",
+    "announceReady": "Buscapalabras listo. {{count}} palabras para encontrar en una cuadrícula de {{size}} por {{size}}.",
+    "announceAnswersShown": "Solución mostrada. La ubicación de las palabras aparece después de la nota sobre la cuadrícula.",
+    "announceAnswersHidden": "Solución oculta."
+  },
+  "presets": {
+    "thanksgiving": {
+      "label": "Día de Acción de Gracias",
+      "emoji": "🦃",
+      "title": "🦃 ¡Feliz Día de Acción de Gracias! 🥧",
+      "words": [
+        "PAVO", "RELLENO", "ARÁNDANO", "TARTA DE CALABAZA", "SALSA", "MAYFLOWER",
+        "FAMILIA", "BANQUETE", "COSECHA", "MUSLO", "MAÍZ", "BATATA", "PASTEL", "PANECILLOS",
+        "PAN", "CAZUELA", "RELLENAR", "HORNEADO", "SOBRAS", "TRINCHAR",
+        "DESFILE", "FÚTBOL", "MAIZAL", "CALABAZA", "SALMUERA", "ROCIAR", "MENUDENCIAS",
+        "DESCONGELAR", "MANTEL", "CENTRO DE MESA", "CUERNO DE ABUNDANCIA", "CLU CLU"
+      ]
+    },
+    "christmas": {
+      "label": "Navidad",
+      "emoji": "🎄",
+      "title": "🎄 ¡Feliz Navidad! 🎅",
+      "words": [
+        "TRINEO", "RENO", "MUÑECO DE NIEVE", "MUÉRDAGO", "CHIMENEA", "BASTÓN DE CARAMELO",
+        "PONCHE DE HUEVO", "PAN DE JENGIBRE", "CORONA", "MEDIA", "LUCES", "CAMPANITAS",
+        "SANTA CLAUS", "ELFO", "ÁRBOL DE NAVIDAD", "CONGELADO", "CASCANUECES",
+        "COPO DE NIEVE", "VILLANCICOS", "FRUTA CONFITADA"
+      ]
+    },
+    "st-patricks": {
+      "label": "San Patricio",
+      "emoji": "☘️",
+      "title": "☘️ Día de San Patricio 🍀",
+      "words": [
+        "TRÉBOL", "HOJA", "DESFILE", "VERDE", "DUBLÍN", "ARPA", "GAITA",
+        "FESTIVAL", "MARZO", "IRLANDÉS", "ALFILERES", "BANDA", "RÍO", "SUERTE", "DORADO",
+        "SILBATO", "BAILE", "CIUDAD", "PRIMAVERA", "CARROZA", "BOLSILLO", "SOMBRERO", "MÚSICA",
+        "CELEBRACIÓN"
+      ]
+    },
+    "easter": {
+      "label": "Pascua",
+      "emoji": "🐣",
+      "title": "🐣 Búsqueda de huevos de Pascua 🐇",
+      "words": [
+        "CHOCOLATE", "CESTA", "CONEJO", "HUEVO", "BÚSQUEDA", "PRIMAVERA", "NARCISSO",
+        "SOMBRERO", "DESFILE", "POLLO", "MAZAPÁN", "NIDO", "PINTAR", "BRUNCH",
+        "FESTIVIDAD", "ABRIL", "SOL", "FLOR", "PRADO", "PICNIC", "CROCO",
+        "LIEBRE", "DULCE", "FAMILIA"
+      ]
+    },
+    "halloween": {
+      "label": "Halloween",
+      "emoji": "🎃",
+      "title": "🎃 Noche de Halloween 👻",
+      "words": [
+        "CALABAZA", "DISFRAZ", "DULCE", "FANTASMA", "BRUJA", "EMBRUJADO", "MÁSCARA",
+        "TRUCO O TRATO", "LINTERNA", "ESQUELETO", "MURCIÉLAGO", "TENEBROSO", "CHOCOLATE",
+        "FIESTA", "OCTUBRE", "NOCHE", "ESPANTOSO", "TALLAR", "MAÍZ CONFITADO", "DECORACIÓN",
+        "MONSTRUO", "ESPECTRO", "DUENDE", "SOMBRAS"
+      ]
+    },
+    "fourth-of-july": {
+      "label": "4 de julio",
+      "emoji": "🎆",
+      "title": "🎆 4 de julio 🎇",
+      "words": [
+        "FUEGOS ARTIFICIALES", "BARBACOA", "DESFILE", "BANDERA", "PICNIC", "BENGALA",
+        "ASADO", "CELEBRACIÓN", "JULIO", "CUATRO", "PETARDO", "GLOBO",
+        "BANDA", "LIMONADA", "SANDÍA", "LIBERTAD", "ÁGUILA", "NACIÓN",
+        "FESTIVAL", "CHISPAS", "NOCHE", "FAMILIA", "AMIGOS", "FESTIVIDAD"
+      ]
+    },
+    "bastille-day": {
+      "label": "Día de la Bastilla",
+      "emoji": "🇫🇷",
+      "title": "🇫🇷 Día de la Bastilla 🎆",
+      "words": [
+        "PARÍS", "BASTILLA", "FUEGOS ARTIFICIALES", "DESFILE", "BANDERA", "JULIO", "CATORCE",
+        "CELEBRACIÓN", "CONCIERTO", "CALLE", "BAILE", "NACIÓN", "HISTORIA",
+        "REVOLUCIÓN", "BANDA", "TORRE", "EIFFEL", "CIUDAD", "LUCES", "VERANO",
+        "FESTIVAL", "FRANCIA", "PLAZA", "ANTORCHA"
+      ]
+    },
+    "oktoberfest": {
+      "label": "Oktoberfest",
+      "emoji": "🥨",
+      "title": "🥨 Oktoberfest 🍺",
+      "words": [
+        "BAVARIA", "SALCHICHA", "BRETZEL", "OCTUBRE", "FESTIVAL", "LEDERHOSEN",
+        "MÚNICH", "MÚSICA", "BANDA", "CARPA", "EMBUTIDO", "PAN", "CELEBRACIÓN",
+        "COSECHA", "BAILE", "JARRA", "MULTITUD", "ALEMANIA", "OTOÑO", "CERVEZA",
+        "ALPINO", "DESFILE", "FESTEJO", "JARDÍN"
+      ]
+    },
+    "fall": {
+      "label": "Otoño",
+      "emoji": "🍂",
+      "title": "🍂 Días de otoño 🍁",
+      "words": [
+        "BELLOTA", "OTOÑO", "SIDRA", "HOJAS", "JARDÍN", "COSECHA", "ESPANTAPÁJAROS",
+        "NOVIEMBRE", "RASTRILLO", "OCTUBRE", "ARCE", "CALABAZA", "SUÉTER", "VENTOSO",
+        "CALABACÍN", "PASEO EN HENO", "HALCÓN", "LABERINTO DE MAÍZ", "MONTÓN DE HOJAS", "HUERTO DE MANZANAS"
+      ]
+    },
+    "soccer-worldcup": {
+      "label": "Mundial",
+      "emoji": "⚽",
+      "title": "⚽ Mundial 2026 — Los 48 equipos 🏆",
+      "words": [
+        "MÉXICO", "SUDÁFRICA", "COREA DEL SUR", "CHEQUIA",
+        "CANADÁ", "BOSNIA Y HERZEGOVINA", "CATAR", "SUIZA",
+        "BRASIL", "MARRUECOS", "HAITÍ", "ESCOCIA",
+        "ESTADOS UNIDOS", "PARAGUAY", "AUSTRALIA", "TURQUÍA",
+        "ALEMANIA", "CURAZAO", "COSTA DE MARFIL", "ECUADOR",
+        "PAÍSES BAJOS", "JAPÓN", "SUECIA", "TÚNEZ",
+        "BÉLGICA", "EGIPTO", "IRÁN", "NUEVA ZELANDA",
+        "ESPAÑA", "CABO VERDE", "ARABIA SAUDITA", "URUGUAY",
+        "FRANCIA", "SENEGAL", "IRAQ", "NORUEGA",
+        "ARGENTINA", "ARGELIA", "AUSTRIA", "JORDANIA",
+        "PORTUGAL", "RD CONGO", "UZBEKISTÁN", "COLOMBIA",
+        "INGLATERRA", "CROACIA", "GHANA", "PANAMÁ"
+      ]
+    },
+    "soccer-europe": {
+      "label": "Europa",
+      "emoji": "⚽",
+      "title": "⚽ Fútbol europeo 🏟️",
+      "words": [
+        "LIGA PREMIER", "LA LIGA", "SERIE A", "BUNDESLIGA", "LIGA 1", "ARSENAL",
+        "LIVERPOOL", "REAL MADRID", "BARCELONA", "BAYERN MÚNICH", "INTER DE MILÁN",
+        "AC MILÁN", "PSG", "JUVENTUS", "MANCHESTER CITY", "TOTTENHAM", "CHELSEA",
+        "ATLÉTICO DE MADRID", "NÁPOLES", "AJAX"
+      ]
+    },
+    "soccer-mls": {
+      "label": "NBA",
+      "emoji": "🏀",
+      "title": "🏀 La NBA 🏀",
+      "words": [
+        "LOS ÁNGELES LAKERS", "BOSTON CELTICS", "GOLDEN STATE WARRIORS", "CHICAGO BULLS",
+        "NEW YORK KNICKS", "MIAMI HEAT", "DALLAS MAVERICKS", "DENVER NUGGETS",
+        "MILWAUKEE BUCKS", "PHILADELPHIA 76ERS", "PHOENIX SUNS", "SAN ANTONIO SPURS",
+        "OKLAHOMA CITY THUNDER", "PORTLAND TRAIL BLAZERS", "UTAH JAZZ", "ATLANTA HAWKS",
+        "ORLANDO MAGIC", "SACRAMENTO KINGS", "MINNESOTA TIMBERWOLVES", "CLEVELAND CAVALIERS"
+      ]
+    },
+    "valentines": {
+      "label": "San Valentín",
+      "emoji": "💘",
+      "title": "💘 ¡Feliz San Valentín! 🌹",
+      "words": [
+        "AMOR", "CORAZÓN", "ROSAS", "BESO", "PAREJA", "CUPIDO",
+        "FLECHA", "MAGNOLIA", "CENIZA", "CHICLE", "GALÁN", "CLAVEL",
+        "MARGARITA", "ORQUÍDEA", "TULIPÁN", "LIRIO", "PIRUFLA", "CARTA",
+        "REGALO", "CITA", "ENAMORADO", "CARICIA", "TERNURA", "FLORERO"
+      ]
+    },
+    "three-kings": {
+      "label": "Reyes Magos",
+      "emoji": "👑",
+      "title": "👑 Día de los Reyes Magos ✨",
+      "words": [
+        "MELCHOR", "GASPAR", "BALTHASAR", "CORONA", "CAMELLO", "ESTRELLA",
+        "BELÉN", "REGALOS", "ROSCÓN", "NEGRONA", "CABALGATA", "PÁGINA",
+        "INFANTE", "MAGO", "ORIENTE", "INCIENSO", "MIRRA", "ORO",
+        "JESÚS", "MARÍA", "JOSÉ", "NACIMIENTO", "CANTABELLA", "DULCE"
+      ]
+    },
+    "carnaval": {
+      "label": "Carnaval",
+      "emoji": "🎭",
+      "title": "🎭 Carnaval 🎉",
+      "words": [
+        "COMPARSA", "DISFRAZ", "MÁSCARA", "DESFILE", "CHIRINGUITO", "CONFETI",
+        "MÚSICA", "BAILE", "FESTEJO", "CARROZA", "REINA", "REY",
+        "SARDA", "TRAVESURA", "FANTASÍA", "PLUMAS", "LENTEJUELA", "TAMBOR",
+        "GRITOS", "ALEGRÍA", "CADIZ", "TENERIFE", "VENECIA", "RIO"
+      ]
+    },
+    "semana-santa": {
+      "label": "Semana Santa",
+      "emoji": "🐣",
+      "title": "🐣 Semana Santa 🌿",
+      "words": [
+        "PROCESIÓN", "PASO", "COFRADÍA", "NAZARENO", "CAPA", "CIRIO",
+        "CRUZ", "SAETA", "MANTILLA", "TRONO", "INCENSO", "CLAVOS",
+        "SUDARIO", "RESURRECCIÓN", "DOMINGO", "JUEVES", "VIERNES", "SÁBADO",
+        "PALMA", "OLIVO", "CÁLIZ", "HOSANNA", "LÁGRIMAS", "LUZ"
+      ]
+    },
+    "san-fermin": {
+      "label": "San Fermín",
+      "emoji": "🐂",
+      "title": "🐂 San Fermín — Pamplona 🏃",
+      "words": [
+        "TORO", "ENCERRAMIENTO", "PAMPLONA", "SAN FERMÍN", "PAÑUELO", "ROJO",
+        "BLANCO", "CARRERA", "TORERO", "CAPEOTE", "PICADOR", "BANDERILLA",
+        "GANADERÍA", "PLAZA", "ARENA", "MUGETA", "CORAL", "VÍA",
+        "RIAU RIAU", "FESTEJO", "MÚSICA", "DANZA", "ALEGRÍA", "NAVARRA"
+      ]
+    },
+    "tomatina": {
+      "label": "La Tomatina",
+      "emoji": "🍅",
+      "title": "🍅 La Tomatina — Buñol 💦",
+      "words": [
+        "TOMATE", "BUÑOL", "GUERRA", "ALMUERZO", "CAMIÓN", "ROCIAR",
+        "CUBO", "CAMISETA", "GAFAS", "MANGUERA", "PLAZA", "MÚSICA",
+        "FESTA", "COLOR", "RISA", "BARRO", "CANTIDAD", "GRITO",
+        "EMPUJÓN", "BOTELLA", "C ESTÁ", "TERRAZA", "VALENCIA", "AGUA"
+      ]
+    },
+    "custom": {
+      "label": "Personalizado",
+      "emoji": "✏️",
+      "title": "",
+      "words": []
+    }
+  }
+}
