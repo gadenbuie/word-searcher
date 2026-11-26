@@ -26,6 +26,8 @@ const els = {
   wordbox: $("wordbox"),
   wordList: $("word-list"),
   wordCount: $("word-count"),
+  status: $("status"),
+  answerSummary: $("answer-summary"),
 };
 
 /* ---------- Presets ---------- */
@@ -273,6 +275,16 @@ const DIRS = [
 
 /* ---------- Helpers ---------- */
 const LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const DIRECTION_NAMES = {
+  "0,1": "right", "0,-1": "left", "1,0": "down", "-1,0": "up",
+  "1,1": "down-right", "1,-1": "down-left", "-1,1": "up-right", "-1,-1": "up-left",
+};
+
+/** Announce changes to screen readers via the polite live region. */
+function announce(message) {
+  els.status.textContent = "";
+  window.setTimeout(() => { els.status.textContent = message; }, 30);
+}
 
 function showError(message) {
   els.error.textContent = message;
@@ -397,32 +409,43 @@ function fitWordList(count) {
 }
 
 /* ---------- Rendering ---------- */
-function renderGrid(container, letters, size) {
+function renderGrid(container, letters, size, label) {
   container.style.setProperty("--cols", size);
+  container.setAttribute("aria-label", `${label}, ${size} rows by ${size} columns`);
   container.textContent = "";
+  const body = document.createElement("tbody");
   for (let r = 0; r < size; r++) {
+    const row = document.createElement("tr");
     for (let c = 0; c < size; c++) {
-      const cell = document.createElement("div");
+      const cell = document.createElement("td");
       cell.className = "cell";
       cell.textContent = letters[r][c];
       cell.dataset.r = r;
       cell.dataset.c = c;
-      container.appendChild(cell);
+      row.appendChild(cell);
     }
+    body.appendChild(row);
   }
+  container.appendChild(body);
 }
 
 function renderAnswerKey(size) {
-  renderGrid(els.answerGrid, grid, size);
+  renderGrid(els.answerGrid, grid, size, "Answer key grid");
   const marked = new Set();
   for (const p of placements) {
     for (let i = 0; i < p.word.letters.length; i++) {
       marked.add(`${p.row + p.dr * i},${p.col + p.dc * i}`);
     }
   }
-  for (const cell of els.answerGrid.children) {
-    if (marked.has(`${cell.dataset.r},${cell.dataset.c}`)) cell.classList.add("marked");
+  for (const cell of els.answerGrid.querySelectorAll("td.cell")) {
+    if (!marked.has(`${cell.dataset.r},${cell.dataset.c}`)) continue;
+    cell.classList.add("marked");
+    // The highlight is also conveyed in text, not by color alone.
+    cell.setAttribute("aria-label",
+      `${cell.textContent}, row ${Number(cell.dataset.r) + 1}, column ${Number(cell.dataset.c) + 1}, part of a hidden word`);
   }
+  els.answerSummary.textContent = "Word locations: " + placements.map((p) =>
+    `${p.word.display}: row ${p.row + 1}, column ${p.col + 1}, reading ${DIRECTION_NAMES[`${p.dr},${p.dc}`] || "along the grid"}`).join(". ") + ".";
 }
 
 function renderWordList() {
@@ -437,7 +460,8 @@ function renderWordList() {
 }
 
 /* ---------- Generation ---------- */
-function generate() {
+function generate(options = {}) {
+  const doAnnounce = options.announce !== false;
   const words = cleanWords(els.words.value);
   if (!words.length) {
     showError("Add at least one word (2+ letters) to the list.");
@@ -465,12 +489,13 @@ function generate() {
   clearError();
 
   els.puzzleTitle.textContent = els.title.value.trim() || "Word Search";
-  renderGrid(els.grid, grid, size);
+  renderGrid(els.grid, grid, size, "Word search grid");
   renderWordList();
   els.puzzle.classList.remove("hidden");
   answerShown = false;
   els.answers.classList.add("hidden");
   els.reveal.textContent = "Show answer key";
+  if (doAnnounce) announce(`Puzzle ready. ${normalized.length} words to find in a ${size} by ${size} grid.`);
 }
 
 function toggleAnswerKey() {
@@ -478,6 +503,9 @@ function toggleAnswerKey() {
   if (answerShown) renderAnswerKey(grid.length);
   els.answers.classList.toggle("hidden", !answerShown);
   els.reveal.textContent = answerShown ? "Hide answer key" : "Show answer key";
+  announce(answerShown
+    ? "Answer key shown. Word locations are listed after the note above the grid."
+    : "Answer key hidden.");
 }
 
 /* ---------- Events ---------- */
@@ -504,4 +532,4 @@ document.addEventListener("keydown", (e) => {
 renderPresetChips();
 seedFromUrl();
 resizeWords();
-generate();
+generate({ announce: false });

@@ -27,13 +27,13 @@
 :root[data-theme="soccer-worldcup"],
 [data-chip-theme="soccer-worldcup"] { --pop: #10A84B; --tint: #FFD400; --paper: #F0FFF3; }
 :root[data-theme="soccer-europe"],
-[data-chip-theme="soccer-europe"] { --pop: #3B6EF5; --tint: #FFD400; --paper: #F1F4FF; }
+[data-chip-theme="soccer-europe"] { --pop: #4676F5; --tint: #FFD400; --paper: #F1F4FF; }
 :root[data-theme="soccer-mls"],
-[data-chip-theme="soccer-mls"] { --pop: #EC2B3A; --tint: #11A85A; --paper: #FFF3F3; }
+[data-chip-theme="soccer-mls"] { --pop: #EC3543; --tint: #11A85A; --paper: #FFF3F3; }
 :root[data-theme="christmas"],
-[data-chip-theme="christmas"] { --pop: #E12B3F; --tint: #128A45; --paper: #FFF5F5; }
+[data-chip-theme="christmas"] { --pop: #E44052; --tint: #128A45; --paper: #FFF5F5; }
 :root[data-theme="st-patricks"],
-[data-chip-theme="st-patricks"] { --pop: #0E8A3E; --tint: #F6C445; --paper: #F1FFF3; }
+[data-chip-theme="st-patricks"] { --pop: #1C9149; --tint: #F6C445; --paper: #F1FFF3; }
 :root[data-theme="easter"],
 [data-chip-theme="easter"] { --pop: #E86FB0; --tint: #7BD8E8; --paper: #FFF4FA; }
 :root[data-theme="halloween"],
@@ -41,7 +41,7 @@
 :root[data-theme="fourth-of-july"],
 [data-chip-theme="fourth-of-july"] { --pop: #F0343F; --tint: #3B6EF5; --paper: #FFF5F5; }
 :root[data-theme="bastille-day"],
-[data-chip-theme="bastille-day"] { --pop: #4A6CF0; --tint: #FFD400; --paper: #F4F7FF; }
+[data-chip-theme="bastille-day"] { --pop: #5676F1; --tint: #FFD400; --paper: #F4F7FF; }
 :root[data-theme="oktoberfest"],
 [data-chip-theme="oktoberfest"] { --pop: #C97A12; --tint: #1B6E3C; --paper: #FFF7E8; }
 :root[data-theme="custom"],
@@ -60,6 +60,33 @@
 }
 
 * { box-sizing: border-box; }
+
+/* Visually hidden, still announced by screen readers. */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 1rem;
+  transform: translateY(-120%);
+  padding: 0.6rem 0.9rem;
+  background: var(--ink);
+  color: #fff;
+  border: 3px solid var(--pop);
+  font-weight: 800;
+}
+.skip-link:focus { transform: translateY(0); }
 
 body {
   margin: 0;
@@ -119,7 +146,6 @@ body {
 }
 @media (max-width: 640px) {
   .wordbox { width: 100%; }
-  .word-list { columns: 2; column-gap: 1.25rem; }
   .word-list li, .puzzle-title { overflow-wrap: anywhere; }
 }
 
@@ -185,10 +211,12 @@ input[type="text"], textarea, select {
   box-shadow: 3px 3px 0 var(--ink);
 }
 textarea { font-family: var(--mono); font-size: 0.9rem; resize: vertical; line-height: 1.5; }
-input:focus-visible, textarea:focus-visible, select:focus-visible, button:focus-visible {
+input:focus-visible, textarea:focus-visible, select:focus-visible,
+button:focus-visible, .word-list:focus-visible, .skip-link:focus-visible {
   outline: 3px solid var(--ink);
   outline-offset: 2px;
 }
+::placeholder { color: #59554E; opacity: 1; }
 input, textarea { caret-color: var(--ink); }
 
 fieldset {
@@ -207,10 +235,11 @@ legend {
   display: flex;
   align-items: center;
   gap: 0.55rem;
+  min-height: 32px;
   padding: 0.3rem 0;
   cursor: pointer;
 }
-.check input { width: 1.05rem; height: 1.05rem; margin: 0; accent-color: var(--pop); }
+.check input { width: 1.5rem; height: 1.5rem; margin: 0; accent-color: var(--pop); flex: none; }
 .field-inline {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
@@ -229,6 +258,7 @@ legend {
   border-radius: 0;
   box-shadow: var(--shadow-sm);
   padding: 0.5rem 0.7rem;
+  min-height: 44px;
   font-family: var(--sans);
   font-size: 0.78rem;
   font-weight: 800;
@@ -244,6 +274,7 @@ legend {
   transform: translate(2px, 2px) rotate(0deg);
   box-shadow: 1px 1px 0 var(--ink);
 }
+.preset-chip:focus-visible { outline-offset: 6px; }
 
 /* ============ Buttons ============ */
 .actions { display: flex; gap: 0.9rem; flex-wrap: wrap; }
@@ -254,6 +285,7 @@ button {
   text-transform: uppercase;
   letter-spacing: 0.02em;
   padding: 0.75rem 1.1rem;
+  min-height: 44px;
   border: var(--border);
   border-radius: 0;
   background: #fff;
@@ -314,10 +346,10 @@ kbd {
 .grid {
   --cols: 10;
   --cell: min(560px / var(--cols), 42px, calc((100vw - 6rem) / var(--cols)));
-  display: grid;
-  grid-template-columns: repeat(var(--cols), var(--cell));
-  grid-auto-rows: var(--cell);
-  justify-content: center;
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: calc(var(--cols) * var(--cell));
+  max-width: 100%;
   margin: 0 auto 1.4rem;
   border: 4px solid var(--ink);
   box-shadow: var(--shadow);
@@ -325,16 +357,23 @@ kbd {
   touch-action: manipulation;
 }
 .cell {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: var(--cell);
+  height: var(--cell);
+  padding: 0;
+  text-align: center;
+  vertical-align: middle;
   font-family: var(--mono);
   font-weight: 800;
   font-size: calc(var(--cell) * 0.5);
   box-shadow: inset 0 0 0 1px #CBC6BA;
   user-select: none;
 }
-.answers .cell.marked { background: var(--pop); box-shadow: inset 0 0 0 2px var(--ink); }
+.answers .cell.marked {
+  background: var(--pop);
+  box-shadow: inset 0 0 0 2px var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
 
 /* ============ Word list ============ */
 .wordbox { max-width: 640px; margin: 0 auto; text-align: left; }
@@ -362,6 +401,11 @@ kbd {
   list-style: square;
 }
 .word-list li { break-inside: avoid; padding: 0.1rem 0; }
+
+/* Keep this after the base .word-list rule so it actually wins on phones. */
+@media (max-width: 640px) {
+  .word-list { columns: 2; column-gap: 1.25rem; }
+}
 
 /* On screen, cap the height so tall lists scroll instead of pushing the page. */
 @media screen {
@@ -404,22 +448,21 @@ kbd {
   /* Grid fills the printable width (7.5in inside 0.5in margins). */
   .grid {
     --cell: calc(var(--print-grid, 7.5in) / var(--cols));
-    grid-template-columns: repeat(var(--cols), var(--cell));
-    grid-auto-rows: var(--cell);
+    width: calc(var(--cols) * var(--cell));
     border: 1.5pt solid #000;
     box-shadow: none;
     margin-bottom: 0.25in;
   }
   .cell {
-    box-shadow: none;
-    border: 0.4pt solid #000;
+    box-shadow: inset 0 0 0 0.4pt #000;
     font-size: calc(var(--print-grid, 7.5in) / var(--cols) * 0.55);
     font-weight: 500;
   }
 
   .answers .cell.marked {
     background: #d9d9d9;
-    box-shadow: none;
+    box-shadow: inset 0 0 0 1pt #000;
+    text-decoration: underline;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }

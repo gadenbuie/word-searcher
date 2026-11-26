@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <a class="skip-link" href="#controls">Skip to controls</a>
+
   <header class="masthead">
     <div class="masthead-inner">
       <div class="brand">
@@ -21,6 +23,8 @@
   </header>
 
   <main class="app">
+    <p id="status" class="sr-only" role="status" aria-live="polite"></p>
+
     <!-- ============ Controls ============ -->
     <section class="panel controls" id="controls" aria-labelledby="controls-title">
       <h2 id="controls-title" class="panel-title">Build your puzzle</h2>
@@ -32,7 +36,7 @@
 
       <fieldset class="field presets">
         <legend>Word list preset</legend>
-        <div class="preset-chips" id="preset-chips" role="group" aria-label="Word list preset"></div>
+        <div class="preset-chips" id="preset-chips"></div>
       </fieldset>
 
       <label class="field">
@@ -81,11 +85,11 @@
     <div class="output">
       <section class="panel puzzle hidden" id="puzzle" aria-labelledby="puzzle-title">
         <h2 id="puzzle-title" class="puzzle-title">Word Search</h2>
-        <div class="grid" id="grid" role="table" aria-label="Word search grid"></div>
+        <table class="grid" id="grid" aria-label="Word search grid"></table>
 
         <div class="wordbox" id="wordbox">
-          <p class="find-label">Find these <span id="word-count">0</span> words</p>
-          <ul class="word-list" id="word-list"></ul>
+          <p class="find-label" id="find-label">Find these <span id="word-count">0</span> words</p>
+          <ul class="word-list" id="word-list" tabindex="0" aria-labelledby="find-label"></ul>
         </div>
 
         <div class="actions no-print">
@@ -97,8 +101,9 @@
       <!-- ============ Answer key (prints on its own page when revealed) ============ -->
       <section class="panel answers hidden" id="answers" aria-labelledby="answers-title">
         <h2 id="answers-title" class="puzzle-title">Answer Key</h2>
-        <p class="answer-note">Highlighted cells show where each word is hidden.</p>
-        <div class="grid" id="answer-grid" role="table" aria-label="Answer key grid"></div>
+        <p class="answer-note">Highlighted, underlined cells show where each word is hidden.</p>
+        <div id="answer-summary" class="sr-only"></div>
+        <table class="grid" id="answer-grid" aria-label="Answer key grid"></table>
       </section>
     </div>
   </main>
